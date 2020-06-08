@@ -6,8 +6,12 @@
     <h4>Selected Color:</h4>
     <Color />
     <h4>Monochromatic Scheme:</h4>
-    <div class="monoDisplay">
-      <MonoColor v-for="color in colors" :colorData="color" :key="color.index" />
+    <div class="displayRow">
+      <MonoColor v-for="color in monoColors" :colorData="color" :key="color.index" />
+    </div>
+    <h4>Analogous Scheme:</h4>
+    <div class="displayRow">
+      <MonoColor v-for="color in analogousColors" :colorData="color" :key="color.index" />
     </div>
   </div>
 </template>
@@ -23,8 +27,11 @@ export default {
     }
   },
   computed: {
-    colors() {
+    monoColors() {
       return this.$store.state.mono
+    },
+    analogousColors() {
+      return this.$store.state.analogous
     }
   },
   methods: {},
@@ -38,7 +45,7 @@ export default {
 
 
 <style scoped>
-.monoDisplay {
+.displayRow {
   display: flex;
   justify-content: center;
 }
