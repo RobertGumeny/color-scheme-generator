@@ -4,6 +4,7 @@
       <label for="color">Color:</label>
       <input type="color" name="color" required v-model="newColor" />
       <button class="btn" type="submit">Generate!</button>
+      <button class="btn" @click="randomColor()">Random!</button>
     </form>
   </div>
 </template>
@@ -20,10 +21,14 @@ export default {
   computed: {},
   methods: {
     createScheme() {
-      this.$store.commit("setColor", this.newColor)
-      this.$store.commit("setMono")
-      this.$store.commit("setAnalogous")
-      this.$store.commit("setTriad")
+      this.$store.dispatch("setColor", this.newColor)
+    },
+    randomColor() {
+      let tinycolor = require('tinycolor2')
+      let randomColor = tinycolor.random()
+      console.log(randomColor)
+      this.newColor = randomColor.toHexString()
+      this.$store.dispatch("setColor", this.newColor)
     }
   },
   components: {}
@@ -47,14 +52,16 @@ form label {
   background: #888888;
   color: #f1f1f1;
   border-radius: 5px;
+  margin-right: 5px;
 }
 .btn:focus {
   outline: 0;
 }
 input[type="color"] {
+  cursor: pointer;
   background-color: #222222;
   width: 25px;
-  height: 25px;
+  height: 30px;
   padding: 0px;
   border: 1px;
   margin-right: 2px;

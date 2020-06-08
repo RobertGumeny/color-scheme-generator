@@ -2,6 +2,7 @@
   <div class="home">
     <h1>Robert's Color Scheme Generator</h1>
     <h3>A simple color scheme generator for Mintbean's CareerHack on 06/08/2020!</h3>
+    <p>Click on the color box below to select a color.</p>
     <Input />
     <h3>Selected Color:</h3>
     <Color />

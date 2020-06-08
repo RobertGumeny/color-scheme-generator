@@ -31,6 +31,12 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    setColor({ commit }, color) {
+      commit("setColor", color)
+      commit("setMono")
+      commit("setAnalogous")
+      commit("setTriad")
+    }
   },
   modules: {
   }
