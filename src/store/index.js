@@ -1,18 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import ColorScheme from 'color-scheme'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    color: ""
+    color: "",
   },
   mutations: {
     setColor(state, color) {
-      console.log("Store is linked")
       // @ts-ignore
-      state.color = "#" + color;
-    }
+      state.color = color;
+    },
   },
   actions: {
   },

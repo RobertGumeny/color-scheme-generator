@@ -1,22 +1,20 @@
 <template>
-  <div class="colorDisplay">
-    <div class="selectedColor" :style="{ backgroundColor: activeColor}"></div>
-    <span>{{activeColor}}</span>
+  <div class="monoColor">
+    <div class="circle" :style="{ backgroundColor: colorData}"></div>
+    <span>{{colorData}}</span>
   </div>
 </template>
 
 
 <script>
 export default {
-  name: 'colorDisplay',
+  name: 'monoColor',
+  props: ["colorData"],
   data() {
     return {
     }
   },
   computed: {
-    activeColor() {
-      return this.$store.state.color;
-    }
   },
   methods: {},
   components: {}
@@ -25,10 +23,10 @@ export default {
 
 
 <style scoped>
-.colorDisplay {
+.monoColor {
   margin: 5px auto;
 }
-.selectedColor {
+.colorDisplay {
   margin: 4px auto;
   height: 60px;
   width: 60px;

@@ -3,6 +3,7 @@
     <h1>Robert's Color Scheme Generator</h1>
     <h3>A simple color scheme generator for Mintbean's CareerHack on 06/08/2020!</h3>
     <Input />
+    <h4>Selected Color:</h4>
     <Color />
   </div>
 </template>
@@ -14,14 +15,14 @@ export default {
   name: 'Home',
   data() {
     return {
-
     }
   },
-  computed: {},
+  computed: {
+  },
   methods: {},
   components: {
     Input,
-    Color
+    Color,
   }
 }
 </script>
