@@ -3,15 +3,19 @@
     <h1>Robert's Color Scheme Generator</h1>
     <h3>A simple color scheme generator for Mintbean's CareerHack on 06/08/2020!</h3>
     <Input />
-    <h4>Selected Color:</h4>
+    <h3>Selected Color:</h3>
     <Color />
-    <h4>Monochromatic Scheme:</h4>
+    <h3>Monochromatic Scheme:</h3>
     <div class="displayRow">
-      <MonoColor v-for="color in monoColors" :colorData="color" :key="color.index" />
+      <Scheme v-for="color in monoColors" :colorData="color" :key="color.index" />
     </div>
-    <h4>Analogous Scheme:</h4>
+    <h3>Analogous Scheme:</h3>
     <div class="displayRow">
-      <MonoColor v-for="color in analogousColors" :colorData="color" :key="color.index" />
+      <Scheme v-for="color in analogousColors" :colorData="color" :key="color.index" />
+    </div>
+    <h3>Triad Scheme:</h3>
+    <div class="displayRow">
+      <Scheme v-for="color in triadColors" :colorData="color" :key="color.index" />
     </div>
   </div>
 </template>
@@ -19,7 +23,7 @@
 <script>
 import Input from "../components/Input"
 import Color from "../components/Color"
-import MonoColor from "../components/MonoColor"
+import Scheme from "../components/Scheme"
 export default {
   name: 'Home',
   data() {
@@ -32,13 +36,16 @@ export default {
     },
     analogousColors() {
       return this.$store.state.analogous
+    },
+    triadColors() {
+      return this.$store.state.triad
     }
   },
   methods: {},
   components: {
     Input,
     Color,
-    MonoColor
+    Scheme
   }
 }
 </script>
@@ -46,7 +53,8 @@ export default {
 
 <style scoped>
 .displayRow {
+  margin: 10px auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 </style>

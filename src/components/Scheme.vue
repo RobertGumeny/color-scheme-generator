@@ -1,5 +1,5 @@
 <template>
-  <div class="monoColor">
+  <div class="scheme">
     <div class="circle" :style="{ backgroundColor: colorData}"></div>
     <span>{{colorData}}</span>
   </div>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'monoColor',
+  name: 'scheme',
   props: ["colorData"],
   data() {
     return {
@@ -23,7 +23,7 @@ export default {
 
 
 <style scoped>
-.monoColor {
+.scheme {
   margin: 5px auto;
 }
 .circle {

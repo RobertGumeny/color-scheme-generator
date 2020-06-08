@@ -10,7 +10,8 @@ export default new Vuex.Store({
   state: {
     color: "",
     mono: [],
-    analogous: []
+    analogous: [],
+    triad: []
   },
   mutations: {
     setColor(state, color) {
@@ -23,6 +24,10 @@ export default new Vuex.Store({
     setAnalogous(state) {
       let analogous = tinycolor(`${state.color}`).analogous()
       state.analogous = analogous.map(function (t) { return t.toHexString(); })
+    },
+    setTriad(state) {
+      let triad = tinycolor(`${state.color}`).triad()
+      state.triad = triad.map(function (t) { return t.toHexString(); })
     }
   },
   actions: {

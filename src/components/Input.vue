@@ -23,6 +23,7 @@ export default {
       this.$store.commit("setColor", this.newColor)
       this.$store.commit("setMono")
       this.$store.commit("setAnalogous")
+      this.$store.commit("setTriad")
     }
   },
   components: {}
