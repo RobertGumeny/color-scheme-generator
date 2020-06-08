@@ -21,7 +21,6 @@ export default {
   methods: {
     createScheme() {
       this.$store.commit("setColor", this.newColor)
-      this.newColor = '#888888'
     }
   },
   components: {}
