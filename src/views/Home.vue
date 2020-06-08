@@ -5,12 +5,17 @@
     <Input />
     <h4>Selected Color:</h4>
     <Color />
+    <h4>Monochromatic Scheme:</h4>
+    <div class="monoDisplay">
+      <MonoColor v-for="color in colors" :colorData="color" :key="color.index" />
+    </div>
   </div>
 </template>
 
 <script>
 import Input from "../components/Input"
 import Color from "../components/Color"
+import MonoColor from "../components/MonoColor"
 export default {
   name: 'Home',
   data() {
@@ -18,15 +23,23 @@ export default {
     }
   },
   computed: {
+    colors() {
+      return this.$store.state.mono
+    }
   },
   methods: {},
   components: {
     Input,
     Color,
+    MonoColor
   }
 }
 </script>
 
 
 <style scoped>
+.monoDisplay {
+  display: flex;
+  justify-content: center;
+}
 </style>

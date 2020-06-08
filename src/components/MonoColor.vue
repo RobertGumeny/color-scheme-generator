@@ -26,7 +26,7 @@ export default {
 .monoColor {
   margin: 5px auto;
 }
-.colorDisplay {
+.circle {
   margin: 4px auto;
   height: 60px;
   width: 60px;
